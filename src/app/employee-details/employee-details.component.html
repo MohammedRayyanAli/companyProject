@@ -1,0 +1,31 @@
+<div class="container">
+  <div style="float:right;margin-bottom: 10px;margin-top: 10px;">
+    <button type="submit" class="btn btn-success" (click)="addEmployee()">Add Employee</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#Id</th>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Adress</th>
+        <th>Employee Type</th>
+        <th scope="col">Update Employee</th>
+        <th scope="col">Delete Employee</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of EmployeeList; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{employee.employee_id}}</td>
+        <td>{{employee.employee_name}}</td>
+        <td>{{employee.employee_adress}}</td>
+        <td>{{employee.employee_type}}</td>
+      <td style="text-align: center"><button type="submit" class="btn btn-success" (click)="updateEmployee(employee)">Update</button></td>
+      <td style="text-align: center"><button type="submit" class="btn btn-danger" (click)="deleteEmployee(i,employee)">Delete</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
